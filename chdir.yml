@@ -1,0 +1,8 @@
+- hosts: vlab1
+  tasks:
+
+    - command:
+        chdir: /tmp/reddy/tmp/chiru
+        cmd: ls
+      register: result
+      tags: t1
