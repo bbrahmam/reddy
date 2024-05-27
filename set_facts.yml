@@ -1,0 +1,8 @@
+---
+- name: "Set variables"
+  set_fact:
+    user_name: "reddy"
+    user_permissions: "rwx"
+
+- debug:
+    msg: "The user '{{ user_name }}' has permissions '{{ user_permissions }}'"

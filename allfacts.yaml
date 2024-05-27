@@ -1,0 +1,9 @@
+---
+- name: Gather All Facts with Ansible
+  hosts: vlab1
+  gather_facts: yes
+  tasks:
+    - name: Display All Facts
+      debug:
+        var: hostvars[inventory_hostname]
+...

@@ -1,0 +1,10 @@
+---
+- name: Playbook with Prompted Variables
+  hosts: vlab1
+  vars_prompt:
+    - name: user_input
+      prompt: "Enter a value:"
+  tasks:
+    - name: Task using prompted variable
+      debug:
+        msg: "You entered: {{ user_input }}"

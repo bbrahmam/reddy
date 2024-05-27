@@ -1,0 +1,9 @@
+---
+- hosts: vlab1
+  tasks:
+    - name: Print HTTP port
+      debug:
+        msg: "HTTP Port is {{ http_port }}"
+    - name: Print username
+      debug:
+        msg: "Username is {{ vlab1 }}"

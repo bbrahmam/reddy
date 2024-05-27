@@ -1,0 +1,8 @@
+---
+ - name: check output
+   hosts: vlab1
+   tasks:
+    - name: diaplay below messages
+      debug:
+       msg="welcome to varains"
+...

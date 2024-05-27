@@ -1,0 +1,9 @@
+---
+- name: Get IP Address with Ansible
+  hosts: vlab1
+  gather_facts: yes
+  tasks:
+    - name: Display IP Address
+      debug:
+        var: ansible_default_ipv4.address
+...

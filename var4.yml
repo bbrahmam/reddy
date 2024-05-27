@@ -1,0 +1,9 @@
+---
+- hosts: vlab1
+  vars:
+    - username: reddy
+    - home: /home/reddy   
+  tasks:
+    - name: print variables
+      debug:
+        msg: "Username: {{ username }}, Home dir: {{ home }}"

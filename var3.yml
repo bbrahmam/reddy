@@ -1,0 +1,19 @@
+---
+- name: Conditional Variable Example
+  hosts: vlab1
+  gather_facts: false
+  
+  vars:
+    my_condition: true
+  tasks:
+    - name: Set variable based on condition
+      set_fact:
+        my_variable: "value_when_true"
+      when: my_condition == true
+    - name: Set variable based on alternative condition
+      set_fact:
+        my_variable: "value_when_false"
+      when: my_condition != true
+    - name: Display variable value
+      debug:
+        var: my_variable

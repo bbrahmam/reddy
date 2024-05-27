@@ -1,0 +1,12 @@
+---
+- hosts: vlab1
+  vars:
+    db_port: 3306
+    user: "root"
+  tasks:    
+    - name: Print database port
+      debug:
+        msg: "Database Port is {{ db_port }}"
+    - name: Print username
+      debug:
+        msg: "Username is {{ user }}"

@@ -1,0 +1,13 @@
+---
+- name: Gather IP address and interface information
+  hosts: vlab1
+  gather_facts: yes
+  tasks:
+    - name: Display IP address and interface information
+      debug:
+        var: ansible_interfaces
+      tags: info
+    - name: get ip adddress for each network interface
+      debug:
+        var: "{{ 'ansible_'+item }}.ipv4.address"
+      with_items: "{{ansible_interfaces}}"

@@ -1,0 +1,10 @@
+---
+ - name: Transfer and execute a script.
+   hosts: vlab1
+   become_user: root
+   tasks:
+   - script: date.sh
+     register: results
+   - debug:
+       var: results.stdout
+...

@@ -1,0 +1,5 @@
+---
+ - name: print to stdout
+   hosts: vlab1
+   tasks:
+     - action: command echo "hello"

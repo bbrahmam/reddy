@@ -1,0 +1,13 @@
+---
+ - name: Transfer and execute a script
+   hosts: vlab1
+   become_user: root
+   tasks:
+     - name: Transfer the script
+       copy: src=date.sh dest=/tmp/date.sh mode=0700
+
+     - name: Execute the script
+       command: sh date.sh
+
+   debug:
+    msg: "{{ test.stdout.split('\n') }}"

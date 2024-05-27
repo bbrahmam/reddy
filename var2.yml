@@ -1,0 +1,10 @@
+---
+- name: Register Task Output Example
+  hosts: vlab1
+  tasks:
+    - name: Run a command and register its output
+      command: free -m
+      register: command_output
+    - name: Display registered output
+      debug:
+        var: command_output.stdout_lines

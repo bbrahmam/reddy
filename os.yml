@@ -1,0 +1,12 @@
+---
+ - hosts: vlab1
+   tasks:
+
+    - name: Gather system facts
+      ansible.builtin.setup:
+
+      register: facts
+
+    - name: Print OS name 
+      debug:
+        msg: "OS is {{ facts[‘ansible_facts‘][‘distribution‘] }}"

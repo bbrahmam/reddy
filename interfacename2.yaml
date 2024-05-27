@@ -1,0 +1,8 @@
+- name: Retrieve IP address of eth0 interface
+  hosts: vlab1
+  gather_facts: yes
+  tasks:
+    - name: Display IP address of eth0 interface
+      debug:
+        var: ansible_eth0.ipv4.address
+...

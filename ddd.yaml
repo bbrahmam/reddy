@@ -1,0 +1,12 @@
+---
+ - name: check package list
+   hosts: vlab1
+   tasks:
+    - name: Get RPM package list
+      setup:
+       filter="ansible_default__ipv4_addresses"
+      register: kernel_result
+
+    - debug:
+        var: kernel_result # inspect package list
+...

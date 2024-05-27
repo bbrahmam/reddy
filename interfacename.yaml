@@ -1,0 +1,10 @@
+---
+- name: Gather IP address and interface information
+  hosts: vlab1 
+  gather_facts: yes
+  tasks:
+    - name: Display IP address and interface information
+      debug:
+        var: ansible_interfaces
+      tags: info
+...

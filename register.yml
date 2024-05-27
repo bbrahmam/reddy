@@ -1,0 +1,10 @@
+- hosts: vlab1
+
+  tasks:
+
+    - name: List directory contents
+      shell: ls /tpm/reddy
+      register: dir_list
+    - name: Print directory listing
+      debug:
+        msg: "{{ dir_list.stdout }}"

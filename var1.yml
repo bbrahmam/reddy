@@ -1,0 +1,9 @@
+---
+- name: Example Playbook
+  hosts: vlab1
+  vars:
+    my_variable: "{{ my_var | default('default_value_if_not_passed') }}"
+  tasks:
+    - name: Display variable value
+      debug:
+        var: my_variable
